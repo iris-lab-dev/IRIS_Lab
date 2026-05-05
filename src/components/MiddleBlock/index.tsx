@@ -33,6 +33,8 @@ interface MiddleBlockProps {
 }
 
 const MiddleBlock = ({ title, content, button, icon, section, id, t }: MiddleBlockProps) => {
+  const renderInlineMarkup = (value: string) => ({ __html: t(value) });
+
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
@@ -62,8 +64,8 @@ const MiddleBlock = ({ title, content, button, icon, section, id, t }: MiddleBlo
         {hasSection ? (
           <ServiceSectionOuter>
             <ServiceContentWrapper>
-              <Title>{t(title)}</Title>
-              <Content>{t(content)}</Content>
+              <Title dangerouslySetInnerHTML={renderInlineMarkup(title)} />
+              <Content dangerouslySetInnerHTML={renderInlineMarkup(content)} />
               <ServiceWrapper>
                 <ServiceRow gutter={[24, 24]}>
                   {section.map((item, index) => {
@@ -77,7 +79,10 @@ const MiddleBlock = ({ title, content, button, icon, section, id, t }: MiddleBlo
                               height="108px"
                             />
                           </ServiceLogoSlot>
-                          <MinPara $wide={isServiceSection}>{t(item.content)}</MinPara>
+                          <MinPara
+                            $wide={isServiceSection}
+                            dangerouslySetInnerHTML={renderInlineMarkup(item.content)}
+                          />
                         </ServiceCard>
                       </Col>
                     );
@@ -90,8 +95,8 @@ const MiddleBlock = ({ title, content, button, icon, section, id, t }: MiddleBlo
           <Row justify="center" align="middle">
             <ContentWrapper>
               <Col lg={24} md={24} sm={24} xs={24}>
-                <Title>{t(title)}</Title>
-                <Content>{t(content)}</Content>
+                <Title dangerouslySetInnerHTML={renderInlineMarkup(title)} />
+                <Content dangerouslySetInnerHTML={renderInlineMarkup(content)} />
                 {button && (
                   <Button name="submit" onClick={() => scrollTo("mission")}>
                     {t(button)}

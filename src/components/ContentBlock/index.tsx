@@ -40,6 +40,8 @@ const ContentBlock = ({
   id,
   direction,
 }: ContentBlockProps) => {
+  const renderInlineMarkup = (value: string) => ({ __html: t(value) });
+
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
@@ -57,8 +59,8 @@ const ContentBlock = ({
         {hasSection ? (
           <ServiceSectionOuter>
             <ServiceContentWrapper id={id}>
-              <Title>{t(title)}</Title>
-              {content ? <Content>{t(content)}</Content> : null}
+              <Title dangerouslySetInnerHTML={renderInlineMarkup(title)} />
+              {content ? <Content dangerouslySetInnerHTML={renderInlineMarkup(content)} /> : null}
               <ServiceWrapper>
                 <ServiceRow gutter={[24, 24]}>
                   {section.map(
@@ -82,7 +84,7 @@ const ContentBlock = ({
                             </ServiceLogoSlot>
                             {/* {item.title ? <MinTitle>{t(item.title)}</MinTitle> : null} */}
 
-                            <MinPara>{t(item.content)}</MinPara>
+                            <MinPara dangerouslySetInnerHTML={renderInlineMarkup(item.content)} />
                           </ServiceCard>
                         </Col>
                       );
@@ -96,7 +98,7 @@ const ContentBlock = ({
           <StyledRow justify="space-between" align="middle" id={id} direction={direction}>
             <Col span={24}>
               <ContentWrapper>
-                <Title>{t(title)}</Title>
+                <Title dangerouslySetInnerHTML={renderInlineMarkup(title)} />
                 <HistoryWrapper>
                   {history.map((group, groupIndex) => {
                     return (
@@ -106,8 +108,8 @@ const ContentBlock = ({
                           {group.items.map((item, itemIndex) => {
                             return (
                               <HistoryItem key={itemIndex}>
-                                <HistoryMonth>{t(item.month)}</HistoryMonth>
-                                <HistoryText>{t(item.content)}</HistoryText>
+                                <HistoryMonth dangerouslySetInnerHTML={renderInlineMarkup(item.month)} />
+                                <HistoryText dangerouslySetInnerHTML={renderInlineMarkup(item.content)} />
                               </HistoryItem>
                             );
                           })}
@@ -133,8 +135,8 @@ const ContentBlock = ({
             ) : null}
             <Col lg={hasIcon ? 11 : 24} md={hasIcon ? 11 : 24} sm={hasIcon ? 11 : 24} xs={24}>
               <ContentWrapper>
-                <Title>{t(title)}</Title>
-                {content ? <Content>{t(content)}</Content> : null}
+                <Title dangerouslySetInnerHTML={renderInlineMarkup(title)} />
+                {content ? <Content dangerouslySetInnerHTML={renderInlineMarkup(content)} /> : null}
                 {direction === "right" ? (
                   <ButtonWrapper>
                     {typeof button === "object" &&

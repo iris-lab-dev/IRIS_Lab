@@ -50,6 +50,11 @@ export const Para = styled("div")`
   width: 70%;
 `;
 
+export const CopyrightPara = styled(Para)`
+  color: #9ca3af;
+  font-family: Arial, Helvetica, sans-serif;
+`;
+
 export const Large = styled(Link)`
   font-size: 16px;
   color: #000;

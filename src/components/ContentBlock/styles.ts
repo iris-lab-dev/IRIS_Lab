@@ -17,11 +17,31 @@ export const ContentSection = styled("section")`
 
 export const Title = styled("h6")`
   white-space: pre-line;
+  color: #404041;
+
+  .accent {
+    color: #D4A017;
+  }
+
+  .accent-strong {
+    color: #D4A017;
+    font-weight: 700;
+  }
 `;
 
 export const Content = styled("p")`
   margin: 1.5rem 0 2rem 0;
   white-space: pre-line;
+  color: #404041;
+
+  .accent {
+    color: #D4A017;
+  }
+
+  .accent-strong {
+    color: #D4A017;
+    font-weight: 700;
+  }
 `;
 
 export const StyledRow = styled(Row)`
@@ -131,6 +151,16 @@ export const MinPara = styled("p")`
   max-width: 260px;
   margin: 0 auto;
   text-align: center;
+  color: #404041;
+
+  .accent {
+    color: #D4A017;
+  }
+
+  .accent-strong {
+    color: #D4A017;
+    font-weight: 700;
+  }
 `;
 
 export const HistoryWrapper = styled("div")`
@@ -157,7 +187,7 @@ export const HistoryYear = styled("div")`
   line-height: 1;
   font-family: "OneStoreMobileGothicTitleFont", sans-serif;
   font-weight: 700;
-  color: #000;
+  color: #404041;
 `;
 
 export const HistoryItems = styled("div")`
@@ -170,7 +200,7 @@ export const HistoryItem = styled("div")`
   display: flex;
   align-items: baseline;
   gap: 0.75rem;
-  color: #000;
+  color: #404041;
 `;
 
 export const HistoryMonth = styled("span")`
@@ -179,12 +209,23 @@ export const HistoryMonth = styled("span")`
   line-height: 1.6;
   font-family: "OneStoreMobileGothicTitleFont", sans-serif;
   font-weight: 700;
+  color: #404041;
 `;
 
 export const HistoryText = styled("span")`
   font-size: 1rem;
   line-height: 1.6;
   white-space: pre-line;
+  color: #404041;
+
+  .accent {
+    color: #D4A017;
+  }
+
+  .accent-strong {
+    color: #D4A017;
+    font-weight: 700;
+  }
 `;
 
 export const ButtonWrapper = styled("div")`

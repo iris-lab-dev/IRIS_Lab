@@ -3,7 +3,9 @@
 
 ## License
 
-Licensed under the MIT license.
+This project is licensed under the MIT License.
+
+Third-party libraries and assets are subject to their own licenses.
 
 <!-- prettier-ignore-start -->
 [antd]: https://github.com/ant-design/ant-design

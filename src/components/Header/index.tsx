@@ -21,14 +21,20 @@ const Header = ({ t }: { t: TFunction }) => {
     setVisibility(!visible);
   };
 
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id) as HTMLDivElement | null;
+
+    if (!element) {
+      return;
+    }
+
+    element.scrollIntoView({
+      behavior: "smooth",
+    });
+    setVisibility(false);
+  };
+
   const MenuItem = () => {
-    const scrollTo = (id: string) => {
-      const element = document.getElementById(id) as HTMLDivElement;
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
-      setVisibility(false);
-    };
     return (
       <>
         <CustomNavLinkSmall onClick={() => scrollTo("about")}>
@@ -48,7 +54,7 @@ const Header = ({ t }: { t: TFunction }) => {
     <HeaderSection>
       <Container>
         <Row justify="space-between">
-          <LogoContainer to="/" aria-label="homepage">
+          <LogoContainer to="/" aria-label="homepage" onClick={() => scrollTo("about")}>
             <img
               src="/img/png/logo.png"
               alt="logo.png"

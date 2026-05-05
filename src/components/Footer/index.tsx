@@ -9,6 +9,7 @@ import {
   Extra,
   LogoContainer,
   Para,
+  CopyrightPara,
   Large,
   Empty,
   FooterContainer,
@@ -51,7 +52,11 @@ const Footer = () => {
               </Para>
               <Para>
                 이메일 : contact@irislab.co.kr | 연락처 : (사업자등록 전)
+              <br/>
               </Para>
+              <CopyrightPara>
+                © 2026 IRIS Lab Co., Ltd.
+              </CopyrightPara>
               {/* <Para>
                 통신판매업신고번호: 1900-서울강남-9999호 | 직업정보제공사업 신고번호: 서울청 제9999-9999호
               </Para> */}

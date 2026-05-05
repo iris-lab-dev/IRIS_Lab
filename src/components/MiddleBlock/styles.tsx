@@ -21,6 +21,16 @@ export const Title = styled("h6")`
   white-space: pre-line;
   font-family: "OneStoreMobileGothicBody", sans-serif;
   font-weight: 600;
+  color: #404041;
+
+  .accent {
+    color: #D4A017;
+  }
+
+  .accent-strong {
+    color: #D4A017;
+    font-weight: 700;
+  }
 
   @media only screen and (max-width: 768px) {
     font-size: 2.25rem;
@@ -36,6 +46,21 @@ export const Title = styled("h6")`
 export const Content = styled("p")`
   padding: 0.75rem 0 0.75rem;
   white-space: pre-line;
+  color: #404041;
+
+  .accent {
+    color: #D4A017;
+  }
+
+  .accent-strong {
+    color: #D4A017;
+    font-weight: 700;
+  }
+
+  .accent-black-strong {
+    color: #000000;
+    font-weight: 700;
+  }
 
   @media only screen and (max-width: 768px) {
     font-size: 1rem;
@@ -141,4 +166,14 @@ export const MinPara = styled("p")<{ $wide?: boolean }>`
   max-width: ${({ $wide }) => ($wide ? "162px" : "260px")};
   margin: ${({ $wide }) => ($wide ? "0" : "0 auto")};
   text-align: center;
+  color: #404041;
+
+  .accent {
+    color: #D4A017;
+  }
+
+  .accent-strong {
+    color: #D4A017;
+    font-weight: 700;
+  }
 `;
