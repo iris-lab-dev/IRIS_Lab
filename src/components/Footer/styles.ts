@@ -93,11 +93,47 @@ export const Empty = styled("div")`
   height: 53px;
 `;
 
+export const SocialItem = styled("a")`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111827;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(17, 24, 39, 0.08);
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #000;
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(17, 24, 39, 0.14);
+  }
+`;
+
+export const SocialIcon = styled("img")`
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+`;
+
+export const SocialLabel = styled("span")`
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+`;
+
 export const FooterContainer = styled("div")`
   max-width: 510px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
   text-align: center;
   align-items: center;
   transition: all 0.1s ease-in-out;
@@ -114,10 +150,7 @@ export const FooterContainer = styled("div")`
 
   @media screen and (max-width: 769px) {
     width: auto;
-
-    a:not(:last-child) {
-      display: none;
-    }
+    justify-content: flex-start;
   }
 
   div {
